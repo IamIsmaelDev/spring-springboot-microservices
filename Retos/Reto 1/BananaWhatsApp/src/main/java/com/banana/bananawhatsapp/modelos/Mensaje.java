@@ -3,6 +3,7 @@ package com.banana.bananawhatsapp.modelos;
 import com.banana.bananawhatsapp.exceptions.MensajeException;
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @AllArgsConstructor
@@ -10,9 +11,14 @@ import java.time.LocalDate;
 @Setter
 @Getter
 @ToString
+@Entity
+@Table(name="mensaje")
 public class Mensaje {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    // !!!!! FALTAN LAS RELACIONES
     private Usuario remitente;
 
     private Usuario destinatario;
