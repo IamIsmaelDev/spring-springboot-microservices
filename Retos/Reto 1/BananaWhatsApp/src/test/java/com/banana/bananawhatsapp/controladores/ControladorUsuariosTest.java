@@ -1,11 +1,16 @@
 package com.banana.bananawhatsapp.controladores;
 
+import com.banana.bananawhatsapp.config.SpringConfig;
 import com.banana.bananawhatsapp.exceptions.UsuarioException;
 import com.banana.bananawhatsapp.modelos.Usuario;
 import com.banana.bananawhatsapp.persistencia.IUsuarioRepository;
 import com.banana.bananawhatsapp.util.DBUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
 
@@ -13,6 +18,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(classes = {SpringConfig.class})
+@EnableAutoConfiguration
 class ControladorUsuariosTest {
     ControladorUsuarios controladorUsuarios;
 
@@ -33,7 +41,8 @@ class ControladorUsuariosTest {
     }
 
     @Test
-    void dadoUsuarioNOValido_cuandoAlta_entoncesExcepcion() {
+    void storeUser() throws Exception {
+        Usuario user2 = new Usuario(1, "");
         Usuario user = new Usuario(null, "Gema", "g@gccom", LocalDate.now(), true);
         assertThrows(Exception.class, () -> {
             controladorUsuarios.alta(user);

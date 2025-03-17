@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +22,10 @@ public class Usuario {
     private String email;
     private LocalDate alta;
     private boolean activo;
+
+    @OneToMany
+    @JoinColumn(name = "remitente_id") // La columna remitente_id estará en la tabla "Mensaje"
+    private List<Mensaje> mensajes;
 
     private boolean validarNombre() {
         return this.nombre != null && this.nombre.length() >= 3;
