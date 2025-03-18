@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -16,33 +17,60 @@ public class UsuarioServicio implements IServicioUsuarios{
     private IUsuarioRepository repository;
 
     @Override
-    public Usuario obtener(int id) throws UsuarioException {
-        return null;
+    public Usuario obtener(Long id) throws UsuarioException, SQLException {
+        return repository.findById(id).orElseThrow();
     }
 
     @Override
     public Usuario crearUsuario(Usuario usuario) throws UsuarioException {
-        try {
-            usuario.valido();
-            repository.crear(usuario);
-            return usuario;
-        } catch (Exception e) {
-            throw new UsuarioException("No se pudo crear el usuario");
+        Optional<Usuario> usuario1 = repository.findByEmail(usuario.getEmail());
+        if(usuario1.isEmpty()){
+            return repository.save(usuario);
+        }else{
+            throw new UsuarioException();
         }
     }
 
     @Override
     public boolean borrarUsuario(Usuario usuario) throws UsuarioException {
-        return false;
+        try{
+            Optional<Usuario> usuario1 = repository.findById(usuario.getId());
+            if (usuario1.isEmpty()){
+                return UsuarioException();
+            }
+            repository.delete(usuario);
+            return true;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return UsuarioException();
+        }
     }
 
     @Override
     public Usuario actualizarUsuario(Usuario usuario) throws UsuarioException {
-        return null;
+        try{
+            Optional<Usuario> usuario1 = repository.findById(usuario.getId());
+            if(usuario1.isEmpty()){
+                return UsuarioException();
+            }
+            return repository.save(usuario);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return UsuarioException();
+        }
     }
 
     @Override
-    public Set<Usuario> obtenerPosiblesDesinatarios(Usuario usuario, int max) throws UsuarioException {
-        return Set.of();
+    public Set<Usuario> obtenerPosiblesDesinatarios(Usuario usuario, int max) throws UsuarioException, SQLException {
+        try{
+            Optional<Usuario> usuario1 = repository.findById(usuario.getId());
+            if(usuario1.isEmpty()){
+                return UsuarioException();
+            }
+            return repository.obtenerPosiblesDestinatarios(usuario.getId(), max);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return UsuarioException();
+        }
     }
 }

@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Set;
 
 public interface IServicioUsuarios {
-    public Usuario obtener(int id) throws UsuarioException;
+    public Usuario obtener(int id) throws UsuarioException, SQLException;
 
     public Usuario crearUsuario(Usuario usuario) throws UsuarioException;
 
@@ -15,5 +15,5 @@ public interface IServicioUsuarios {
 
     public Usuario actualizarUsuario(Usuario usuario) throws UsuarioException;
 
-    public Set<Usuario> obtenerPosiblesDesinatarios(Usuario usuario, int max) throws UsuarioException;
+    public Set<Usuario> obtenerPosiblesDesinatarios(Usuario usuario, int max) throws UsuarioException, SQLException;
 }

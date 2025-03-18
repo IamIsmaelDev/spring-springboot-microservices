@@ -19,12 +19,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {SpringConfig.class})
-@EnableAutoConfiguration
 class ServicioUsuariosTest {
 
-    @Autowired
     IServicioUsuarios servicio;
 
     @BeforeEach
@@ -33,7 +29,7 @@ class ServicioUsuariosTest {
     }
 
     @Test
-    void altaUsuarioValido() throws Exception {
+    void dadoUnUsuarioValido_cuandoCrearUsuario_entoncesUsuarioValido() throws Exception {
         Usuario nuevo = new Usuario(null, "Ricardo", "r@r.com", LocalDate.now(), true);
         servicio.crearUsuario(nuevo);
 

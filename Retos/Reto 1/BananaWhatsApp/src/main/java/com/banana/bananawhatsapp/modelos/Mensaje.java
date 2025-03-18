@@ -9,9 +9,8 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
-@Getter
-@ToString
+@Data
+@Builder
 @Entity
 @Table(name="mensaje")
 public class Mensaje {
@@ -19,17 +18,13 @@ public class Mensaje {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "remitente_id")
+    @ManyToOne()
+    @JoinColumn(name = "from_user")
     private Usuario remitente;
 
-    @OneToMany
-    @JoinTable(
-        name = "mensaje_destinatarios",
-        joinColumns = @JoinColumn(name = "mensaje_id"),
-        inverseJoinColumns = @JoinColumn(name = "usuario_id")
-    )
-    private List<Usuario> destinatario;
+    @ManyToOne()
+    @JoinColumn(name = "to_user")
+    private Usuario destinatario;
 
     private String cuerpo;
     private LocalDate fecha;
@@ -44,7 +39,7 @@ public class Mensaje {
         if (remitente != null
                 && destinatario != null
                 && remitente.valido()
-                && destinatario.size() > 0
+                && destinatario.valido()
                 && cuerpo != null
                 && cuerpo.length() > 10
                 && validarFecha()
