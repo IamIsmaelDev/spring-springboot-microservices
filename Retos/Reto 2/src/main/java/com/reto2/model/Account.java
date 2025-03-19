@@ -37,8 +37,9 @@ public class Account {
 
     /*
     @ManyToOne
-    @JoinColumn(name = "id_customer")
+    @JoinColumn(name = "owner_id", insertable = false, updatable = false)
     Customer owner;
     */
+
 
 }

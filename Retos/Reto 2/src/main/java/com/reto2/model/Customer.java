@@ -13,8 +13,8 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
-//@Table(name = "customer")
+@Entity
+@Table(name = "customer")
 public class Customer {
 
     @Id
