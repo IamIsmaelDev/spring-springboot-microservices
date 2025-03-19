@@ -13,8 +13,8 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "customer")
+//@Entity
+//@Table(name = "customer")
 public class Customer {
 
     @Id
@@ -29,6 +29,8 @@ public class Customer {
     @Email
     private String email;
 
+    /*
     @OneToMany(mappedBy = "owner")
     private List<Account> accountList;
+     */
 }

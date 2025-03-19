@@ -32,9 +32,13 @@ public class Account {
     @NotBlank
     private Long ownerId;
 
+    @Transient
+    Customer owner;
+
+    /*
     @ManyToOne
     @JoinColumn(name = "id_customer")
     Customer owner;
-
+    */
 
 }
