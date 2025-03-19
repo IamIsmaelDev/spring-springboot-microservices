@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Getter
@@ -18,16 +19,21 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank
     private String type;
 
+    @NotBlank
     @DateTimeFormat
     Date openingDate;
 
+    @NotBlank
     private int balance;
 
+    @NotBlank
     private Long ownerId;
 
-    @Transient
+    @ManyToOne
+    @JoinColumn(name = "id_customer")
     Customer owner;
 
 
