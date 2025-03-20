@@ -49,6 +49,7 @@ public class AccountService implements IAccountService {
     public Account updateAccount(Long id, Account account) {
         Account newAccount = accountRepository.findById(id).orElseThrow(() -> new AccountNotfoundException(id));
         newAccount.setType(account.getType());
+        newAccount.setBalance(account.getBalance());
         return accountRepository.save(newAccount);
     }
 

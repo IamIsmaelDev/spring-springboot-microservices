@@ -1,10 +1,10 @@
 package com.reto2.controller;
 
+import com.reto2.model.Account;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/default")
@@ -18,8 +18,17 @@ public interface IAccountServiceController {
     @GetMapping(value = "/{id}")
     ResponseEntity getAllAccountsByCustomer(@PathVariable("id") Long id);
 
+    @PostMapping(value = "/{oid}/create")
+    ResponseEntity createAccount(@RequestBody Account account, @PathVariable Long oid);
 
 
+    @PutMapping(value = "/{oid}/update")
+    ResponseEntity updateAccount(@RequestBody Account account, @PathVariable Long oid);
+
+    /*
+    @DeleteMapping(value = "/{pid}")
+    ResponseEntity deleteProduct(@PathVariable Long pid);
+    */
 
 
 }

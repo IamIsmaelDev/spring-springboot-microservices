@@ -19,17 +19,17 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank
+    //@NotBlank
     private String type;
 
-    @NotBlank
+    //@NotBlank
     @DateTimeFormat
     Date openingDate;
 
-    @NotBlank
+    //@NotBlank
     private int balance;
 
-    @NotBlank
+    //@NotBlank
     private Long ownerId;
 
     @Transient
