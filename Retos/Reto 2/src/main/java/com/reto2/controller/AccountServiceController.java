@@ -58,4 +58,67 @@ public class AccountServiceController implements IAccountServiceController{
         }
     }
 
+    @Override
+    public ResponseEntity deleteAccount(Long oid, Long aid) {
+        // Cuando no se encuentre cuenta en BD dar excepción personalizada
+        Account deleteAccount = accountRepository.findById(aid).orElseThrow(() -> new AccountNotfoundException(aid));
+
+        if(deleteAccount.getOwnerId().equals(oid)) {
+            accountService.deleteAccountsUsingOwnerId(oid);
+            return ResponseEntity.status(HttpStatus.OK.value()).body("borrado exitosamente");
+        }else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No se ha podido realizar la acción");
+        }
+
+    }
+
+    @Override
+    public ResponseEntity addMoneyToBalance(int balance, Long aid, Long oid) {
+        Account newAccount = accountRepository.findById(aid).orElseThrow(() -> new AccountNotfoundException(aid));
+        newAccount.setBalance(
+                (newAccount.getBalance() + balance)
+        );
+        if(newAccount.getOwnerId().equals(oid)) {
+            accountService.updateAccount(newAccount.getId(), newAccount);
+            return ResponseEntity.status(HttpStatus.OK.value()).body("Se ha ingresado dinero");
+        }else{
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No existe la cuenta para este usuario");
+        }
+    }
+
+    @Override
+    public ResponseEntity takeMoneyToBalance(int balance, Long aid, Long oid) {
+        Account newAccount = accountRepository.findById(aid).orElseThrow(() -> new AccountNotfoundException(aid));
+        newAccount.setBalance(
+                (newAccount.getBalance() - balance)
+        );
+        if(newAccount.getOwnerId().equals(oid)) {
+            accountService.updateAccount(newAccount.getId(), newAccount);
+            return ResponseEntity.status(HttpStatus.OK.value()).body("Se ha retirado dinero");
+        }else{
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No existe la cuenta para este usuario");
+        }
+    }
+
+    @Override
+    public ResponseEntity deleteAccountsByUser(Long oid) {
+        accountService.deleteAccountsUsingOwnerId(oid);
+        return ResponseEntity.status(HttpStatus.OK.value()).body("borrado exitosamente");
+    }
+
+    @Override
+    public ResponseEntity loan(Long oid, Integer money) {
+        List<Account> accountList = accountService.getAccountByOwnerId(oid);
+        Integer balanceTotal = 0;
+        for (int i = 0; i < accountList.size(); i++){
+            balanceTotal += accountList.get(i).getBalance();
+        }
+        double balancePercentage = (balanceTotal * 0.8);
+        if (balancePercentage >= money ){
+            return ResponseEntity.status(HttpStatus.OK.value()).body("Puede realizar el préstamo");
+        }else{
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("Supera el 80% de la cantidad total de sus cuentas");
+        }
+    }
+
 }
