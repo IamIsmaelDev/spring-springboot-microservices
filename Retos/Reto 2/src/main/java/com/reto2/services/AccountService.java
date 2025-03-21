@@ -85,5 +85,43 @@ public class AccountService implements IAccountService {
         }
     }
 
-
+    @Override
+    public boolean withdrawBalanceAllAcounts(Long id, int amount, Long ownerId) {
+        Account newAccount = accountRepository.findById(id).orElseThrow(() -> new AccountNotfoundException(id));
+        List<Account> accounts = accountRepository.findByOwnerId(ownerId);
+        Integer allAmount = 0;
+        for (Account account : accounts) {
+            allAmount += account.getBalance();
+        }
+        if (allAmount >= amount){
+            Customer owner = null; // Will be gotten from user service
+            int currentBalance = newAccount.getBalance();
+            int newBalance = newAccount.getBalance() - amount;
+            if (newBalance <= 0) {
+                Integer amountToTake = amount - currentBalance;
+                newAccount.setBalance(0);
+                accountRepository.save(newAccount);
+                for (Account account : accounts) {
+                    Integer currentAccountBalance = account.getBalance();
+                    if(amountToTake > 0 && account.getId() != id) {
+                        if (account.getBalance() < amountToTake) {
+                            account.setBalance(0);
+                            amountToTake -= currentAccountBalance;
+                        } else {
+                            account.setBalance(account.getBalance() - amountToTake);
+                            amountToTake = 0;
+                        }
+                        accountRepository.save(account);
+                    }
+                }
+                return true;
+            }else {
+                newAccount.setBalance(newBalance);
+                accountRepository.save(newAccount);
+                return true;
+            }
+        }else{
+            return false;
+        }
+    }
 }

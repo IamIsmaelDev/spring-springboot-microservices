@@ -48,4 +48,9 @@ public interface IAccountServiceController {
 
     @GetMapping(value = "/{oid}/{money}/loan")
     ResponseEntity loan(@PathVariable Long oid, @PathVariable Integer money);
+
+    @PutMapping(value = "/{aid}/{oid}/takeBalanceAllAccounts")
+    ResponseEntity takeMoneyToBalanceAllAccounts(@RequestBody int balance, @PathVariable Long aid, @PathVariable Long oid);
+
+
 }

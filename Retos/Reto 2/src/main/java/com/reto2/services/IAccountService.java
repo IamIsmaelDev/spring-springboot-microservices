@@ -25,4 +25,5 @@ public interface IAccountService {
 
     void deleteAccountsUsingOwnerId(Long ownerId);
 
+    boolean withdrawBalanceAllAcounts(Long id, int amount, Long ownerId);
 }

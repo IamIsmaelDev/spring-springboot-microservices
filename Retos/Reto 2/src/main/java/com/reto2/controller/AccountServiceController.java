@@ -121,4 +121,12 @@ public class AccountServiceController implements IAccountServiceController{
         }
     }
 
+    @Override
+    public ResponseEntity takeMoneyToBalanceAllAccounts(int balance, Long aid, Long oid) {
+        if(accountService.withdrawBalanceAllAcounts(aid,balance,oid))
+            return ResponseEntity.status(HttpStatus.OK.value()).body("Se ha retirado dinero");
+        else
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No se ha podido retirar el dinero");
+    }
+
 }
