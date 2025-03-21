@@ -1,5 +1,6 @@
 package com.reto2.model;
 
+import com.reto2.constraints.AccountType;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,6 +21,7 @@ public class Account {
     private Long id;
 
     //@NotBlank
+    @AccountType
     private String type;
 
     //@NotBlank

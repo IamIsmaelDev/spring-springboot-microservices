@@ -33,7 +33,7 @@ spring:
     console.path: /h2-ui
 
 server:
-  port: 9090
+  port: 9900
 
 #debug: true
 logging:
@@ -49,4 +49,9 @@ spring:
 
 server:
   servlet.contextPath: /api/v1
-  port: 8443
+  port: 9943
+  ssl:
+    key-store: keystore.p12
+    key-store-password: reto2spring
+    keyStoreType: PKCS12
+    keyAlias: Reto_2

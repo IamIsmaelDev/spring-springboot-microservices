@@ -34,11 +34,11 @@ public class AccountServiceController implements IAccountServiceController{
         if(account.getOwnerId().equals(oid))
             return ResponseEntity.status(HttpStatus.OK.value()).body(account);
         else
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("Error");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("Error al obtener la cuenta");
     }
 
     @Override
-    public ResponseEntity createAccount(Account account, Long oid) {
+    public ResponseEntity createAccount( Account account, Long oid) {
         account.setOwnerId(oid);
         Account account1 = accountService.create(account);
         return ResponseEntity.status(HttpStatus.OK.value()).body(account);
@@ -54,12 +54,12 @@ public class AccountServiceController implements IAccountServiceController{
             accountService.updateAccount(account.getId(), account);
             return ResponseEntity.status(HttpStatus.OK.value()).body(account);
         }else{
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No existe la cuenta para este usuario");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No existe la cuenta a actualizar para este usuario");
         }
     }
 
     @Override
-    public ResponseEntity deleteAccount(Long oid, Long aid) {
+    public ResponseEntity deleteAccount(Long aid, Long oid) {
         // Cuando no se encuentre cuenta en BD dar excepción personalizada
         Account deleteAccount = accountRepository.findById(aid).orElseThrow(() -> new AccountNotfoundException(aid));
 
@@ -67,7 +67,7 @@ public class AccountServiceController implements IAccountServiceController{
             accountService.delete(aid);
             return ResponseEntity.status(HttpStatus.OK.value()).body("borrado exitosamente");
         }else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No se ha podido realizar la acción");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No se ha podido realizar la acción de borrado");
         }
 
     }
