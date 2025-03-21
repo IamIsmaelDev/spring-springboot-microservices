@@ -1,6 +1,7 @@
 package com.reto2.controller;
 
 import com.reto2.model.Account;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,17 +12,17 @@ import javax.validation.Valid;
 public interface IAccountServiceController {
 
     // PUNTO 1 -> RESTer : http://localhost:9090/account/3/3
-    @GetMapping(value = "/{id}/{oid}")
+    @GetMapping(value = "/{id}/{oid}", consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity getAccountByCustomer(@PathVariable("id") Long id, @PathVariable("oid") Long oid);
 
     // Punto 2 -> RESTer : http://localhost:9090/account/3
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/{id}", consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity getAllAccountsByCustomer(@PathVariable("id") Long id);
 
     // Punto 3 -> RESTer : http://localhost:9090/account/1/create
     // HEADERS : Name(Content-Type) Value(Application/json)
     // BODY: { "type":"ahorro", "balance":500}
-    @PostMapping(value = "/{oid}/create")
+    @PostMapping(value = "/{oid}/create", consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity createAccount(@RequestBody Account account, @PathVariable Long oid);
 
     // RESTer : http://localhost:9090/account/1/update
@@ -46,11 +47,11 @@ public interface IAccountServiceController {
     @DeleteMapping(value = "/{oid}/deleteAllAccounts")
     ResponseEntity deleteAccountsByUser(@PathVariable Long pid);
 
-    @GetMapping(value = "/{oid}/{money}/loan")
+    @GetMapping(value = "/{oid}/{money}/loan", consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity loan(@PathVariable Long oid, @PathVariable Integer money);
 
+    // BONUS -> RESTer : http://localhost:9090/account/3/deleteAllAccounts
     @PutMapping(value = "/{aid}/{oid}/takeBalanceAllAccounts")
     ResponseEntity takeMoneyToBalanceAllAccounts(@RequestBody int balance, @PathVariable Long aid, @PathVariable Long oid);
-
 
 }

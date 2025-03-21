@@ -64,7 +64,7 @@ public class AccountServiceController implements IAccountServiceController{
         Account deleteAccount = accountRepository.findById(aid).orElseThrow(() -> new AccountNotfoundException(aid));
 
         if(deleteAccount.getOwnerId().equals(oid)) {
-            accountService.deleteAccountsUsingOwnerId(oid);
+            accountService.delete(aid);
             return ResponseEntity.status(HttpStatus.OK.value()).body("borrado exitosamente");
         }else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No se ha podido realizar la acción");
