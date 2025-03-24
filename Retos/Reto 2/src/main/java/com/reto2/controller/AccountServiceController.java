@@ -1,5 +1,7 @@
 package com.reto2.controller;
 
+import com.reto2.dto.AccountDTO;
+import com.reto2.dto.Converter;
 import com.reto2.exception.AccountNotfoundException;
 import com.reto2.model.Account;
 import com.reto2.persistence.AccountRepository;
@@ -21,6 +23,9 @@ public class AccountServiceController implements IAccountServiceController{
 
     @Autowired
     AccountRepository accountRepository;
+
+    @Autowired
+    Converter converter;
 
     @Override
     public ResponseEntity getAllAccountsByCustomer(Long id) {
@@ -127,6 +132,17 @@ public class AccountServiceController implements IAccountServiceController{
             return ResponseEntity.status(HttpStatus.OK.value()).body("Se ha retirado dinero");
         else
             return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("No se ha podido retirar el dinero");
+    }
+
+    //DTO
+    @Override
+    public ResponseEntity getAccountByCustomerDTO(Long id, Long oid) {
+        Account account = accountService.getAccount(id);
+        if(account.getOwnerId().equals(oid)) {
+            AccountDTO accountDTO = converter.convertEntityToDTO(account);
+            return ResponseEntity.status(HttpStatus.OK.value()).body(accountDTO);
+        }else
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.value()).body("Error al obtener la cuenta");
     }
 
 }

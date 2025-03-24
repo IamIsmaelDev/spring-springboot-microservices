@@ -68,4 +68,11 @@ public interface IAccountServiceController {
     @PutMapping(value = "/{aid}/customer/{oid}/takeBalanceAllAccounts")
     ResponseEntity takeMoneyToBalanceAllAccounts(@RequestBody int balance, @PathVariable Long aid, @PathVariable Long oid);
 
+    // DTO
+    @GetMapping(value = "/DTO/{id}/customer/{oid}", consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
+    ResponseEntity getAccountByCustomerDTO(
+            @Parameter(name = "account_id", description = "introduce el id de la cuenta",example = "1")
+            @PathVariable("id") Long id,
+            @Parameter(name = "owner_id", description = "introduce el id de un cliente",example = "1")
+            @PathVariable("oid") Long oid);
 }
