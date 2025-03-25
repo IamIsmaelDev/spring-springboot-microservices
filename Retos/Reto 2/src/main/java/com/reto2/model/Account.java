@@ -37,6 +37,14 @@ public class Account {
     @Transient
     Customer owner;
 
+    public Account(String type, Date openingDate, int balance, Long ownerId) {
+        this.type = type;
+        this.openingDate = openingDate;
+        this.balance = balance;
+        this.ownerId = ownerId;
+    }
+
+
     /*
     @ManyToOne
     @JoinColumn(name = "owner_id", insertable = false, updatable = false)
