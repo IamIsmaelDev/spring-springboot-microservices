@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.1">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.2">
   <diagram name="Página-1" id="tY_578vqZiOzTQhLFPis">
-    <mxGraphModel dx="1323" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="836" dy="501" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -50,6 +50,45 @@
         </mxCell>
         <mxCell id="3umB6E8wOPS6ejXKB-Yw-27" value="HTTPS&lt;div&gt;keystore.p12&lt;/div&gt;" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" parent="3umB6E8wOPS6ejXKB-Yw-25" vertex="1">
           <mxGeometry x="125" y="220" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-1" value="TestController{&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;}&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="510" y="440" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-2" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=0.006;entryY=0.246;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="_1vD3CCfBnafuuntgOwN-1" target="3umB6E8wOPS6ejXKB-Yw-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="540" y="560" as="sourcePoint" />
+            <mxPoint x="590" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-8" value="Service" style="swimlane;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1400" y="35" width="270" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-9" value="&lt;b&gt;AccountService&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp;Account create(Account account)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Account getAccount(Long id)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Account updateAccount(Long id, Account account)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;void deleteAccountsUsingOwnerId(Long ownerId)&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=top;" vertex="1" parent="_1vD3CCfBnafuuntgOwN-8">
+          <mxGeometry x="16" y="40" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-12" value="&lt;div&gt;TestService{&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;}&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1431" y="425" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-13" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="_1vD3CCfBnafuuntgOwN-12" target="_1vD3CCfBnafuuntgOwN-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1580" y="480" as="sourcePoint" />
+            <mxPoint x="1630" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-14" value="Persistence" style="swimlane;labelBackgroundColor=default;" vertex="1" parent="1">
+          <mxGeometry x="1830.5" y="30" width="270" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-15" value="&lt;b&gt;AccountRepository&lt;/b&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;findByOwnerId(Long OwnerId)&lt;/b&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=top;" vertex="1" parent="_1vD3CCfBnafuuntgOwN-14">
+          <mxGeometry x="16" y="40" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-16" value="&lt;div&gt;AccountRepostioryTest{&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&amp;nbsp;private static final Logger logger = LoggerFactory.getLogger(AccountRepositoryTest.class);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; @Autowired&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private TestEntityManager entityManager;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; @Autowired&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; private AccountRepository accountRepository;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; @Test&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; void findByOwnerId(){&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // given&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Account newAcount = new Account();&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Date current_Date = new Date();&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; newAcount.setType(&quot;Personal&quot;);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; newAcount.setOpeningDate(current_Date);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; newAcount.setBalance(9999);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; newAcount.setOwnerId(1L);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; entityManager.persist(newAcount);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; entityManager.flush();&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // when&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; List&amp;lt;Account&amp;gt; accountList = accountRepository.findByOwnerId(1L);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; logger.info(&quot;Accounts:&quot; + accountList);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; // then&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; assertNotNull(accountList);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; assertThat(accountList.size())&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; .isGreaterThan(0);&lt;/div&gt;&lt;div&gt;&amp;nbsp; &amp;nbsp; }&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;}&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1751" y="425" width="429" height="535" as="geometry" />
+        </mxCell>
+        <mxCell id="_1vD3CCfBnafuuntgOwN-17" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="_1vD3CCfBnafuuntgOwN-16" target="_1vD3CCfBnafuuntgOwN-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1900" y="480" as="sourcePoint" />
+            <mxPoint x="1950" y="430" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
