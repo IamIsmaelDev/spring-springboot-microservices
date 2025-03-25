@@ -61,4 +61,13 @@ public class AccountServiceTest {
 
     }
 
+    @Test
+    void givenOwnerIdDeleteAllAccounts(){
+
+        accountService.deleteAccountsUsingOwnerId(3L);
+        List<Account> accountList = accountService.getAccountByOwnerId(3L);
+        assertThat(accountList.isEmpty());
+
+    }
+
 }
