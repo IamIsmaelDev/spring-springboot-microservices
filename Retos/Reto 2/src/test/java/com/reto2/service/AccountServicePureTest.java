@@ -75,4 +75,30 @@ public class AccountServicePureTest {
         });
     }
 
+        @Test
+    void givenAccountIdAndAccountUpdateThenException(){
+
+        Account newAcount = new Account();
+        newAcount.setType("Personal");
+        newAcount.setOpeningDate(null);
+        newAcount.setBalance(9999);
+        newAcount.setOwnerId(1L);
+
+        Account accountCreated = accService.create(newAcount);
+
+        assertThatExceptionOfType(AccountNotfoundException.class).isThrownBy(() -> {
+            Account accountUpdate = accService.updateAccount(100L, accountCreated);
+        });
+
+    }
+
+    @Test
+    void givenOwnerIdDeleteAllAccounts(){
+
+        accService.deleteAccountsUsingOwnerId(1L);
+        List<Account> accountList = accService.getAccountByOwnerId(1L);
+        assertThat(accountList.isEmpty());
+
+    }
+
 }
