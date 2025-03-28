@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2aa28d5f-42ca-4429-b497-10dc733ed927" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/oauth2-api-client/src/main/java/com/microcompany/oauth2apiclient/model/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oauth2-api-client/src/main/java/com/microcompany/oauth2apiclient/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Reto2Diagrama.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keystore.p12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/config/AuthorizationServerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/config/GlobalExceptionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/constraints/AccountType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/controller/AccountServiceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/controller/IAccountServiceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/dto/AccountDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/dto/Converter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/dto/CustomerDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/exception/AccountNotfoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/exception/GlobalException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/model/Account.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/model/StatusMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/payload/ApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/persistence/AccountRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/services/AccountService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/reto2/services/IAccountService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/createdb_and_user.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reto2/ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reto2/controller/AccountServiceControllerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reto2/controller/AccountServiceControllerTestPure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reto2/controller/AccountServiceControllerTest_MockMvc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reto2/persistence/AccountRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reto2/service/AccountServicePureTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/reto2/service/AccountServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testing.sql" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2ucnYDMyiYr5JrL4LevSNjEDtJb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/admin/Documents/Retos/spring-springboot-microservices/Retos/Reto 4 OAUTH/oauth2-api-client",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\Retos\spring-springboot-microservices\Retos\Reto 4 OAUTH\oauth2-resource-server\src\main\java\com\microcompany\oauth2resourceserver\model" />
+      <recent name="C:\Users\admin\Documents\Retos\spring-springboot-microservices\Retos\Reto 4 OAUTH" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.reto2.config" />
+      <recent name="com.reto2.dto" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Reto 2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Reto 2" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2aa28d5f-42ca-4429-b497-10dc733ed927" name="Changes" comment="" />
+      <created>1742556784654</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742556784654</updated>
+    </task>
+    <servers />
+  </component>
+</project>

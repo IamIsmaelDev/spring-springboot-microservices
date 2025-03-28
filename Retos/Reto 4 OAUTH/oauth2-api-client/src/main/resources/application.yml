@@ -1,0 +1,27 @@
+server:
+  port: 9900
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          products-client-oidc:
+            provider: spring
+            client-id: MyBankApp
+            client-secret: myClientSecretValue
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:9900/login/oauth2/code/{registrationId}"
+            scope: openid
+            client-name: account-client-oidc
+          products-client-authorization-code:
+            provider: spring
+            client-id: MyBankApp
+            client-secret: myClientSecretValue
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:9900/authorized"
+            scope: SCOPE_account.read
+            client-name: account-client-authorization-code
+        provider:
+          spring:
+            issuer-uri: http://auth-server:9000
