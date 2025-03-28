@@ -16,7 +16,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOf
 
 // TODO: uncomment and implement methods
 @SpringBootTest
-@Sql(value = "classpath:data_testing.sql")
+@Sql(value = "classpath:testing.sql")
 class AccountServiceControllerTest {
 
     @Autowired

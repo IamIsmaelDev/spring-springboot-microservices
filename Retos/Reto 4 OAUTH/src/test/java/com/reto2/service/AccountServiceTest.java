@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-@Sql(value = "classpath:data_testing.sql")
+@Sql(value = "classpath:testing.sql")
 public class AccountServiceTest {
 
     @Autowired

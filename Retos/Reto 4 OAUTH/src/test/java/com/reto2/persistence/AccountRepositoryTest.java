@@ -24,7 +24,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @DataJpaTest()
 @ComponentScan(basePackages = {"com.reto2"})
 @AutoConfigureTestEntityManager
-@Sql(value = "classpath:data_testing.sql")
+@Sql(value = "classpath:testing.sql")
 public class AccountRepositoryTest {
 
     private static final Logger logger = LoggerFactory.getLogger(AccountRepositoryTest.class);
